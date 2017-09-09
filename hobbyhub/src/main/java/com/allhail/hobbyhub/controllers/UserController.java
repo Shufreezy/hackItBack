@@ -11,7 +11,7 @@ import com.allhail.hobbyhub.models.User;
 
 @RestController
 public class UserController {
-	private UserRepository repo;
+	private final UserRepository repo;
 	
 	public UserController(UserRepository repo) {
 		this.repo = repo;
@@ -21,5 +21,11 @@ public class UserController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Collection<User> getUsers() {
 		return repo.findAll();
+	}
+	
+	@GetMapping("/get-user/{id}")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public User getUser(long id) {
+		return repo.findOne(id);
 	}
 }

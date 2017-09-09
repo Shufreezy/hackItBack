@@ -45,4 +45,17 @@ public class BaseModel {
 	public void setDeleted(Boolean deleted) {
 		this.deleted = deleted;
 	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return null;
+	}
 }

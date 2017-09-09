@@ -23,6 +23,10 @@ public class User extends BaseModel  {
 	
 	private String contactNo;
 	
+	public User() {
+		this("Dale");
+	}
+	
 	public User(String name, String pic, Boolean subscribe, String email, String contactNo) {
 		super();
 		this.name = name;
@@ -32,6 +36,17 @@ public class User extends BaseModel  {
 		this.contactNo = contactNo;
 	}
 
+	// Dummy constructor
+	public User(String name) {
+		this(
+			name,
+			"someurl.com/pic",
+			true,
+			"someemail@somewhere.xxx",
+			"09295567121"
+		);
+	}
+	
 	public String getName() {
 		return name;
 	}

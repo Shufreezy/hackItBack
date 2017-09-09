@@ -3,13 +3,11 @@ package com.allhail.hobbyhub.models;
 import java.util.Date;
 import java.util.Calendar;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
 public class BaseModel {
 	
 	@Id

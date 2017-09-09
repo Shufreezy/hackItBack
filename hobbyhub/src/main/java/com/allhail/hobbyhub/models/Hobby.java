@@ -28,4 +28,10 @@ public class Hobby extends BaseModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public Hobby(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
 }

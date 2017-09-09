@@ -1,12 +1,15 @@
 package com.allhail.hobbyhub.models;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.Calendar;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
 public class BaseModel {
 	
 	@Id
@@ -14,21 +17,13 @@ public class BaseModel {
 	private Long id;
 	
 	@JsonIgnore
-	private Date dateCreated;
+	private Date dateCreated = Calendar.getInstance().getTime();
 	
 	@JsonIgnore
-	private Date dateUpdated;
+	private Date dateUpdated = Calendar.getInstance().getTime();
 	
-	private Boolean deleted;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	private Boolean deleted = false;
+	
 	public Date getDateCreated() {
 		return dateCreated;
 	}

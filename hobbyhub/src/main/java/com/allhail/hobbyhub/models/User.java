@@ -92,4 +92,12 @@ public class User extends BaseModel  {
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
+	
+	public boolean update(User user) {
+		setName(user.getName());
+		setPic(user.getPic());
+		setSubscribe(user.getSubscribe());
+		setEmail(user.getEmail());
+		return true;
+	}
 }

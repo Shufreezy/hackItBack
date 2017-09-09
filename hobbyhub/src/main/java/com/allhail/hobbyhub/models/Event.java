@@ -54,6 +54,11 @@ public class Event extends BaseModel {
 	private Boolean privacy;
 	
 	@ManyToOne
+	@JoinColumn(name="organization_id")
+	@JsonBackReference
+	private Organization organization;
+	
+	@ManyToOne
 	@JoinColumn(name="user_id")
 	@JsonBackReference
 	private User user;
@@ -117,5 +122,13 @@ public class Event extends BaseModel {
 	
 	public void setPrivacy(Boolean privacy) {
 		this.privacy = privacy;
+	}
+
+	public Organization getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
 	}
 }

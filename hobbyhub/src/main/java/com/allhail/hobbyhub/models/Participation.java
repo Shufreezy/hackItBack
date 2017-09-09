@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Participation {
+	
+	public Participation() {}
 
 	@Id
 	@GeneratedValue
@@ -26,5 +28,29 @@ public class Participation {
 	@JoinColumn(name="affiliation_id")
 	@JsonBackReference
 	private Affiliation affiliation;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	public Affiliation getAffiliation() {
+		return affiliation;
+	}
+
+	public void setAffiliation(Affiliation affiliation) {
+		this.affiliation = affiliation;
+	}
 
 }

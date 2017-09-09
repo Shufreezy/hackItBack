@@ -21,11 +21,17 @@ public class User extends BaseModel  {
 	
 	private String email;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	private String contactNo;
 	
-	public User() {
-		this("Dale");
-	}
+	public User() {	}
 	
 	public User(String name, String pic, Boolean subscribe, String email, String contactNo) {
 		super();

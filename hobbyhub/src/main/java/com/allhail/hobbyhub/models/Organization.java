@@ -8,6 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Organization extends BaseModel {
 	
+	public Organization() {}
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "organization_id")
@@ -21,6 +23,14 @@ public class Organization extends BaseModel {
 	
 	private String link;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}

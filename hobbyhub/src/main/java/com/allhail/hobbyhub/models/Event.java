@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -26,10 +27,12 @@ public class Event extends BaseModel {
 	private Double fee;
 	private Boolean privacy;
 	
+	@ManyToOne
 	@JoinColumn(name="user_id")
 	@JsonBackReference
 	private User user;
 	
+	@ManyToOne
 	@JoinColumn(name="location_id")
 	@JsonBackReference
 	private Location location;

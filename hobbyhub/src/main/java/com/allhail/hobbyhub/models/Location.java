@@ -8,6 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Location extends BaseModel {
 	
+	public Location() {}
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "location_id")
@@ -20,6 +22,12 @@ public class Location extends BaseModel {
 	
 	public String getName() {
 		return name;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public void setName(String name) {
 		this.name = name;

@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Tag extends BaseModel {
+	
+	public Tag() {	}
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "tag_id")
@@ -25,4 +28,28 @@ public class Tag extends BaseModel {
 	@JoinColumn(name="hobby_id")
 	@JsonBackReference
 	private Hobby hobby;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	public Hobby getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(Hobby hobby) {
+		this.hobby = hobby;
+	}
 }

@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 public class Event extends BaseModel {
 	
+	public Event() {}
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "event_id")
@@ -21,6 +23,30 @@ public class Event extends BaseModel {
 	
 	private Date dateStart;
 	private Date dateEnd;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	private String name;
 	private String description;
 	private String pic;
